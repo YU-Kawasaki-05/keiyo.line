@@ -1011,12 +1011,13 @@
 }
 
 /* ============================================================
-   RESPONSIVE — MOBILE (スマホ縦持ち)
-   Reveal.js scales internally, but when embedded or on small
-   viewports we override grids → single column, shrink text, etc.
+   RESPONSIVE — MOBILE
+   Uses .is-mobile class set by JS when viewport <= 768px.
+   Reveal.js runs at 380×680 on mobile so content renders at
+   native size, not scaled-down 1280px.
    ============================================================ */
 
-/* Tablet-ish */
+/* Tablet-ish (media query still works for mid-range) */
 @media screen and (max-width: 960px) {
   .reveal .slides section {
     padding: 0.8rem 1rem;
@@ -1063,407 +1064,511 @@
   }
 }
 
-/* Phone */
-@media screen and (max-width: 600px) {
-  .sp-only { display: inline; }
-
-  .reveal .slides section {
-    padding: 0.6rem 0.6rem;
-  }
-
-  .slide-content {
-    padding: 0.2rem 0.2rem;
-  }
-
-  /* Title slide */
-  .title-main {
-    font-size: 2rem !important;
-  }
-
-  .title-sub {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .title-badge {
-    font-size: 0.8rem;
-    padding: 0.4rem 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .title-meta {
-    font-size: 0.75rem;
-  }
-
-  .title-divider {
-    display: none;
-  }
-
-  .title-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  /* Section dividers */
-  .section-divider h2 {
-    font-size: 1.7rem !important;
-  }
-
-  .section-number {
-    font-size: 2.8rem;
-  }
-
-  .section-divider p {
-    font-size: 1rem;
-  }
-
-  /* Section titles */
-  .section-title {
-    font-size: 1.25rem !important;
-    margin-bottom: 0.8rem !important;
-  }
-
-  .slide-lead {
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Agenda */
-  .agenda-grid {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-  }
-
-  .agenda-item {
-    padding: 0.8rem;
-    gap: 0.7rem;
-  }
-
-  .agenda-num {
-    font-size: 1.3rem;
-  }
-
-  .agenda-text strong {
-    font-size: 0.92rem;
-  }
-
-  .agenda-text span {
-    font-size: 0.75rem;
-  }
-
-  /* Axis header */
-  .axis-header {
-    margin-bottom: 1rem;
-    gap: 0.7rem;
-  }
-
-  .axis-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 1.6rem;
-  }
-
-  .axis-title {
-    font-size: 1.2rem !important;
-  }
-
-  .axis-subtitle {
-    font-size: 0.8rem;
-  }
-
-  /* Card grids → 1 col */
-  .card-grid-2,
-  .card-grid-3 {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-  }
-
-  .info-card {
-    padding: 1rem;
-  }
-
-  .info-card .card-icon {
-    font-size: 1.3rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .info-card h3 {
-    font-size: 0.95rem !important;
-    margin-bottom: 0.3rem !important;
-  }
-
-  .info-card p {
-    font-size: 0.82rem;
-  }
-
-  .info-card p br {
-    display: none;
-  }
-
-  .card-tag {
-    font-size: 0.68rem;
-    margin-top: 0.4rem;
-  }
-
-  /* Callout boxes */
-  .callout-box {
-    padding: 0.9rem 1rem;
-    font-size: 0.88rem;
-    gap: 0.6rem;
-  }
-
-  .callout-box.compact {
-    padding: 0.7rem 0.9rem;
-    font-size: 0.82rem;
-  }
-
-  .callout-icon {
-    font-size: 1.1rem;
-  }
-
-  .callout-box p {
-    font-size: 0.82rem;
-  }
-
-  /* Rent map */
-  .rent-zone {
-    padding: 0.9rem 1rem;
-  }
-
-  .zone-label {
-    font-size: 0.88rem;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .rent-stations {
-    gap: 0.4rem;
-  }
-
-  .rent-badge {
-    padding: 0.45rem 0.7rem;
-    font-size: 0.8rem;
-    min-width: 80px;
-  }
-
-  .rent-badge span {
-    font-size: 0.7rem;
-  }
-
-  /* Two columns → stack */
-  .two-col {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-
-  .col-header {
-    padding: 0.6rem 1rem;
-    font-size: 0.92rem;
-  }
-
-  .col-body {
-    padding: 0.9rem;
-  }
-
-  .stations-label {
-    font-size: 0.78rem;
-  }
-
-  .clean-list li {
-    font-size: 0.82rem;
-    padding-left: 1rem;
-  }
-
-  /* Type comparison → stack */
-  .type-comparison {
-    grid-template-columns: 1fr;
-    gap: 0.8rem;
-  }
-
-  .type-col {
-    padding: 1rem;
-  }
-
-  .type-col h3 {
-    font-size: 1rem !important;
-  }
-
-  .type-desc {
-    font-size: 0.78rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .type-list {
-    gap: 0.5rem;
-  }
-
-  .type-item {
-    padding: 0.4rem 0.6rem;
-  }
-
-  .type-item strong {
-    font-size: 0.85rem;
-  }
-
-  .type-item span {
-    font-size: 0.72rem;
-  }
-
-  /* Station header */
-  .station-header {
-    flex-wrap: wrap;
-    gap: 0.5rem 0.8rem;
-    margin-bottom: 0.8rem;
-    padding-bottom: 0.7rem;
-  }
-
-  .station-code {
-    font-size: 0.72rem;
-    padding: 0.25rem 0.5rem;
-  }
-
-  .station-name {
-    font-size: 1.3rem !important;
-  }
-
-  .station-rent {
-    width: 100%;
-    margin-left: 0;
-    font-size: 0.88rem;
-  }
-
-  .station-rent strong {
-    font-size: 1.3rem;
-  }
-
-  .best-badge {
-    font-size: 0.6rem !important;
-    padding: 0.2rem 0.5rem;
-  }
-
-  /* Station grid → stack */
-  .station-grid {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .eval-card {
-    padding: 0.8rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0 0.8rem;
-  }
-
-  .eval-label {
-    font-size: 0.7rem;
-    margin-bottom: 0;
-    width: 60px;
-    flex-shrink: 0;
-  }
-
-  .eval-bar {
-    flex: 1;
-    margin-bottom: 0;
-    height: 6px;
-  }
-
-  .eval-card p {
-    width: 100%;
-    font-size: 0.75rem;
-    margin-top: 0.3rem;
-  }
-
-  .eval-card p br {
-    display: none;
-  }
-
-  /* Recommend cards → stack */
-  .recommend-cards {
-    grid-template-columns: 1fr;
-    gap: 0.7rem;
-  }
-
-  .recommend-card {
-    padding: 1rem;
-    gap: 0.8rem;
-  }
-
-  .recommend-rank {
-    font-size: 1.6rem;
-    width: 40px;
-    height: 40px;
-  }
-
-  .recommend-body h3 {
-    font-size: 1.05rem !important;
-  }
-
-  .recommend-rent {
-    font-size: 0.78rem;
-  }
-
-  .recommend-body p {
-    font-size: 0.8rem;
-  }
-
-  .recommend-body p br {
-    display: none;
-  }
-
-  .r-tag {
-    font-size: 0.65rem;
-    padding: 0.15rem 0.45rem;
-  }
-
-  /* Checklist */
-  .check-item {
-    padding: 1rem;
-    gap: 0.7rem;
-  }
-
-  .check-icon {
-    font-size: 1.4rem;
-  }
-
-  .check-item strong {
-    font-size: 0.95rem;
-  }
-
-  .check-item p {
-    font-size: 0.8rem;
-  }
-
-  /* Closing */
-  .closing-slide h2 {
-    font-size: 1.8rem !important;
-  }
-
-  .closing-sub {
-    font-size: 0.78rem;
-  }
-
-  .closing-tip {
-    padding: 0.6rem 1rem;
-    font-size: 0.75rem;
-  }
-
-  /* Download FAB */
-  .download-fab {
-    bottom: 1rem;
-    right: 1rem;
-    width: 44px;
-    height: 44px;
-  }
-
-  .download-fab svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .download-menu {
-    min-width: 200px;
-  }
+/* ============================================================
+   MOBILE — class-based (applied when Reveal runs at 380px)
+   ============================================================ */
+
+/* Allow vertical scroll within each slide on mobile */
+.is-mobile .reveal .slides section {
+  padding: 0.5rem 0.3rem;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.is-mobile .reveal .slides section > .slide-content {
+  padding: 0.1rem 0.1rem;
+}
+
+.is-mobile .reveal .slide-number {
+  font-size: 0.6rem;
+  right: 0.5rem;
+  bottom: 0.4rem;
+}
+
+.is-mobile .reveal .controls {
+  display: none;
+}
+
+/* ---- Title Slide ---- */
+.is-mobile .title-badge {
+  font-size: 0.65rem;
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.is-mobile .title-main {
+  font-size: 1.7rem !important;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+.is-mobile .title-sub {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.is-mobile .sp-only {
+  display: inline;
+}
+
+.is-mobile .title-meta {
+  font-size: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.is-mobile .title-divider {
+  display: none;
+}
+
+/* ---- Section Dividers ---- */
+.is-mobile .section-divider h2 {
+  font-size: 1.4rem !important;
+}
+
+.is-mobile .section-number {
+  font-size: 2.2rem;
+}
+
+.is-mobile .section-divider p {
+  font-size: 0.8rem;
+}
+
+/* ---- Section Titles ---- */
+.is-mobile .section-title {
+  font-size: 1rem !important;
+  margin-bottom: 0.5rem !important;
+  gap: 0.4rem;
+}
+
+.is-mobile .accent-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.is-mobile .slide-lead {
+  font-size: 0.7rem;
+  margin-top: -0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ---- Agenda ---- */
+.is-mobile .agenda-grid {
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+}
+
+.is-mobile .agenda-item {
+  padding: 0.5rem 0.6rem;
+  gap: 0.5rem;
+}
+
+.is-mobile .agenda-num {
+  font-size: 1rem;
+}
+
+.is-mobile .agenda-text strong {
+  font-size: 0.78rem;
+}
+
+.is-mobile .agenda-text span {
+  font-size: 0.62rem;
+}
+
+/* ---- Axis Header ---- */
+.is-mobile .axis-header {
+  margin-bottom: 0.6rem;
+  gap: 0.5rem;
+}
+
+.is-mobile .axis-icon {
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+.is-mobile .axis-title {
+  font-size: 0.95rem !important;
+}
+
+.is-mobile .axis-subtitle {
+  font-size: 0.65rem;
+}
+
+/* ---- Card Grids ---- */
+.is-mobile .card-grid-2,
+.is-mobile .card-grid-3 {
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+}
+
+.is-mobile .info-card {
+  padding: 0.55rem 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 0.5rem;
+}
+
+.is-mobile .info-card .card-icon {
+  font-size: 1rem;
+  margin-bottom: 0;
+  margin-right: 0.3rem;
+}
+
+.is-mobile .info-card h3 {
+  font-size: 0.8rem !important;
+  margin: 0 !important;
+  flex: 1;
+}
+
+.is-mobile .info-card p {
+  width: 100%;
+  font-size: 0.68rem;
+  margin-top: 0.2rem;
+  line-height: 1.45;
+}
+
+.is-mobile .info-card p br {
+  display: none;
+}
+
+.is-mobile .card-tag {
+  font-size: 0.58rem;
+  padding: 0.15rem 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.is-mobile .card-tag br {
+  display: none;
+}
+
+/* ---- Callout Boxes ---- */
+.is-mobile .callout-box {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.72rem;
+  gap: 0.4rem;
+  border-radius: 8px;
+}
+
+.is-mobile .callout-box.compact {
+  padding: 0.4rem 0.55rem;
+  font-size: 0.68rem;
+}
+
+.is-mobile .callout-icon {
+  font-size: 0.9rem;
+}
+
+.is-mobile .callout-box p {
+  font-size: 0.68rem;
+  margin: 0.15rem 0 0 0;
+}
+
+.is-mobile .callout-box ul.clean-list {
+  margin-top: 0.3rem;
+}
+
+.is-mobile .callout-box .clean-list li {
+  font-size: 0.68rem;
+  padding-left: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+/* ---- Rent Map ---- */
+.is-mobile .rent-zone {
+  padding: 0.55rem 0.6rem;
+}
+
+.is-mobile .zone-label {
+  font-size: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.is-mobile .zone-sub {
+  font-size: 0.65rem;
+}
+
+.is-mobile .rent-stations {
+  gap: 0.3rem;
+}
+
+.is-mobile .rent-badge {
+  padding: 0.35rem 0.55rem;
+  font-size: 0.7rem;
+  min-width: 65px;
+  border-radius: 6px;
+}
+
+.is-mobile .rent-badge span {
+  font-size: 0.6rem;
+}
+
+/* ---- Two Columns ---- */
+.is-mobile .two-col {
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.is-mobile .col-header {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.78rem;
+}
+
+.is-mobile .col-body {
+  padding: 0.55rem 0.7rem;
+}
+
+.is-mobile .stations-label {
+  font-size: 0.65rem;
+  margin-bottom: 0.4rem;
+}
+
+.is-mobile .clean-list li {
+  font-size: 0.7rem;
+  padding-left: 0.9rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.is-mobile .clean-list li::before {
+  top: 0.4rem;
+  width: 4px;
+  height: 4px;
+}
+
+/* ---- Type Comparison ---- */
+.is-mobile .type-comparison {
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.is-mobile .type-col {
+  padding: 0.5rem 0.6rem;
+}
+
+.is-mobile .type-col h3 {
+  font-size: 0.85rem !important;
+}
+
+.is-mobile .type-desc {
+  font-size: 0.62rem;
+  margin-bottom: 0.35rem;
+}
+
+.is-mobile .type-list {
+  gap: 0.25rem;
+}
+
+.is-mobile .type-item {
+  padding: 0.25rem 0.45rem;
+}
+
+.is-mobile .type-item strong {
+  font-size: 0.72rem;
+}
+
+.is-mobile .type-item span {
+  font-size: 0.58rem;
+}
+
+/* ---- Station Header ---- */
+.is-mobile .station-header {
+  flex-wrap: wrap;
+  gap: 0.3rem 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+}
+
+.is-mobile .station-code {
+  font-size: 0.6rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.is-mobile .station-name {
+  font-size: 1.05rem !important;
+}
+
+.is-mobile .station-area {
+  font-size: 0.6rem;
+}
+
+.is-mobile .station-rent {
+  width: 100%;
+  margin-left: 0;
+  font-size: 0.72rem;
+}
+
+.is-mobile .station-rent strong {
+  font-size: 1.05rem;
+}
+
+.is-mobile .best-badge {
+  font-size: 0.52rem !important;
+  padding: 0.15rem 0.4rem;
+}
+
+/* ---- Station Eval Grid ---- */
+.is-mobile .station-grid {
+  grid-template-columns: 1fr;
+  gap: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.is-mobile .eval-card {
+  padding: 0.4rem 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 0.5rem;
+}
+
+.is-mobile .eval-label {
+  font-size: 0.6rem;
+  margin-bottom: 0;
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.is-mobile .eval-bar {
+  flex: 1;
+  margin-bottom: 0;
+  height: 5px;
+}
+
+.is-mobile .eval-card p {
+  width: 100%;
+  font-size: 0.62rem;
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+
+.is-mobile .eval-card p br {
+  display: none;
+}
+
+/* ---- Recommend Cards ---- */
+.is-mobile .recommend-cards {
+  grid-template-columns: 1fr;
+  gap: 0.4rem;
+}
+
+.is-mobile .recommend-cards.compact-cards {
+  gap: 0.3rem;
+}
+
+.is-mobile .recommend-card {
+  padding: 0.55rem 0.6rem;
+  gap: 0.5rem;
+}
+
+.is-mobile .recommend-rank {
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+}
+
+.is-mobile .recommend-body h3 {
+  font-size: 0.85rem !important;
+}
+
+.is-mobile .recommend-rent {
+  font-size: 0.65rem;
+  margin-bottom: 0.2rem;
+}
+
+.is-mobile .recommend-body p {
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
+.is-mobile .recommend-body p br {
+  display: none;
+}
+
+.is-mobile .recommend-tags {
+  margin-top: 0.3rem;
+  gap: 0.25rem;
+}
+
+.is-mobile .r-tag {
+  font-size: 0.55rem;
+  padding: 0.12rem 0.35rem;
+}
+
+.is-mobile .inline-rent {
+  font-size: 0.7rem !important;
+}
+
+/* ---- Checklist ---- */
+.is-mobile .checklist {
+  gap: 0.4rem;
+}
+
+.is-mobile .check-item {
+  padding: 0.55rem 0.6rem;
+  gap: 0.5rem;
+}
+
+.is-mobile .check-icon {
+  font-size: 1.1rem;
+}
+
+.is-mobile .check-item strong {
+  font-size: 0.78rem;
+  margin-bottom: 0.15rem;
+}
+
+.is-mobile .check-item p {
+  font-size: 0.65rem;
+}
+
+/* ---- Closing ---- */
+.is-mobile .closing-slide h2 {
+  font-size: 1.4rem !important;
+  margin-bottom: 0.8rem;
+}
+
+.is-mobile .closing-sub {
+  font-size: 0.62rem;
+  margin-bottom: 1rem;
+}
+
+.is-mobile .closing-sub br {
+  display: none;
+}
+
+.is-mobile .closing-tip {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.6rem;
+}
+
+/* ---- Download FAB ---- */
+.is-mobile .download-fab {
+  bottom: 0.7rem;
+  right: 0.7rem;
+  width: 38px;
+  height: 38px;
+}
+
+.is-mobile .download-fab svg {
+  width: 16px;
+  height: 16px;
+}
+
+.is-mobile .download-menu {
+  min-width: 180px;
+}
+
+.is-mobile .download-option {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.78rem;
+}
+
+/* ---- Highlight card on mobile ---- */
+.is-mobile .info-card.highlight-card {
+  border-width: 1px;
 }

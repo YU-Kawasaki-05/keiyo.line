@@ -923,15 +923,18 @@
 
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
   <script>
+    // Detect mobile
+    const isMobile = window.innerWidth <= 768;
+
     Reveal.initialize({
       hash: true,
       slideNumber: 'c/t',
-      width: 1280,
-      height: 720,
-      margin: 0.04,
-      minScale: 0.2,
-      maxScale: 1.5,
-      center: true,
+      width: isMobile ? 380 : 1280,
+      height: isMobile ? 680 : 720,
+      margin: isMobile ? 0.02 : 0.04,
+      minScale: isMobile ? 0.8 : 0.2,
+      maxScale: isMobile ? 1.0 : 1.5,
+      center: !isMobile,
       transition: 'slide',
       transitionSpeed: 'default',
       backgroundTransition: 'fade',
@@ -940,7 +943,13 @@
       touch: true,
       hideInactiveCursor: true,
       hideCursorTime: 3000,
+      disableLayout: false,
     });
+
+    // Add mobile class
+    if (isMobile) {
+      document.documentElement.classList.add('is-mobile');
+    }
 
     // Download FAB
     const fab = document.getElementById('download-fab');
