@@ -1,0 +1,1469 @@
+/* ============================================================
+   京葉線沿線 住みやすさガイド — Reveal.js Custom Theme
+   ============================================================ */
+
+/* ---------- BASE RESET & TYPOGRAPHY ---------- */
+:root {
+  --navy: #0f172a;
+  --navy-mid: #1e3a5f;
+  --blue: #2d6a9f;
+  --blue-light: #4a9fd4;
+  --blue-pale: #e8f4fd;
+  --blue-bg: #f0f7ff;
+  --green: #059669;
+  --green-light: #d1fae5;
+  --red: #dc2626;
+  --red-light: #fee2e2;
+  --orange: #ea580c;
+  --orange-light: #fff7ed;
+  --amber: #f59e0b;
+  --amber-light: #fef3c7;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gold: #b8860b;
+  --gold-light: #fef9e7;
+  --silver: #6b7280;
+  --bronze: #92400e;
+  --font-sans: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+.reveal {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--gray-800);
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.reveal p {
+  line-height: 1.7;
+}
+
+.reveal section {
+  text-align: left;
+}
+
+/* ---------- SP only break ---------- */
+.sp-only { display: none; }
+
+/* ---------- SLIDE CONTENT WRAPPER ---------- */
+.slide-content {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+/* ============================================================
+   TITLE SLIDE
+   ============================================================ */
+.title-slide {
+  text-align: center;
+  color: #fff;
+}
+
+.title-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  padding: 0.5rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.title-main {
+  font-size: 3.8rem !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.title-sub {
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.title-meta {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.04em;
+}
+
+.title-divider {
+  margin: 0 0.8rem;
+  opacity: 0.4;
+}
+
+/* ============================================================
+   SECTION DIVIDERS
+   ============================================================ */
+.section-divider {
+  text-align: center;
+  color: #fff;
+}
+
+.section-number {
+  font-size: 4.5rem;
+  font-weight: 900;
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.section-divider h2 {
+  font-size: 2.8rem !important;
+  color: #fff !important;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.section-divider p {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   SECTION TITLE (inside content slides)
+   ============================================================ */
+.section-title {
+  font-size: 1.7rem !important;
+  font-weight: 700;
+  color: var(--navy) !important;
+  margin-bottom: 1.2rem !important;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.accent-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--blue);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.accent-dot.red {
+  background: var(--red);
+}
+
+.slide-lead {
+  font-size: 1rem;
+  color: var(--gray-500);
+  margin-top: -0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   AGENDA
+   ============================================================ */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.agenda-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.agenda-num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--blue);
+  opacity: 0.35;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.agenda-text strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+}
+
+.agenda-text span {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+}
+
+/* ============================================================
+   AXIS HEADER
+   ============================================================ */
+.axis-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.axis-icon {
+  font-size: 2.4rem;
+  background: var(--blue-pale);
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.axis-title {
+  font-size: 1.6rem !important;
+  margin: 0 !important;
+}
+
+.axis-subtitle {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  margin: 0.15rem 0 0 0;
+}
+
+/* ============================================================
+   CARD GRIDS
+   ============================================================ */
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.info-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.3rem 1.2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  position: relative;
+}
+
+.info-card .card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.info-card h3 {
+  font-size: 1.05rem !important;
+  color: var(--navy) !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.info-card p {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.info-card.highlight-card {
+  border-color: var(--blue-light);
+  background: var(--blue-pale);
+}
+
+.card-tag {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+
+.card-tag.important {
+  background: var(--red-light);
+  color: var(--red);
+}
+
+.card-tag.warning {
+  background: var(--amber-light);
+  color: var(--orange);
+}
+
+.card-tag.recommended-tag {
+  background: var(--green-light);
+  color: var(--green);
+}
+
+/* ============================================================
+   CALLOUT BOXES
+   ============================================================ */
+.callout-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.callout-box.compact {
+  padding: 0.9rem 1.2rem;
+  font-size: 0.92rem;
+}
+
+.callout-box p {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.92rem;
+}
+
+.callout-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.callout-box.danger {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+}
+
+.callout-box.warning {
+  background: var(--amber-light);
+  border-left: 4px solid var(--amber);
+}
+
+.callout-box.info {
+  background: var(--blue-pale);
+  border-left: 4px solid var(--blue);
+}
+
+.callout-box.success {
+  background: var(--green-light);
+  border-left: 4px solid var(--green);
+}
+
+/* ============================================================
+   RENT MAP
+   ============================================================ */
+.rent-map {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.rent-zone {
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+}
+
+.zone-high {
+  background: var(--red-light);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.zone-target {
+  background: var(--green-light);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.zone-label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gray-700);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.zone-sub {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--gray-500);
+}
+
+.rent-stations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.rent-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  min-width: 100px;
+}
+
+.rent-badge span {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--gray-500);
+  margin-top: 0.2rem;
+}
+
+.rent-badge.high {
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  color: var(--red);
+}
+
+.rent-badge.target {
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  color: var(--green);
+}
+
+/* ============================================================
+   TWO COLUMNS
+   ============================================================ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.col-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #fff;
+}
+
+.col-card.recommended {
+  box-shadow: 0 0 0 2px var(--green), var(--shadow-md);
+}
+
+.col-header {
+  padding: 0.8rem 1.2rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.col-header.hot { background: var(--red); }
+.col-header.cool { background: var(--green); }
+
+.col-body {
+  padding: 1.2rem;
+}
+
+.stations-label {
+  font-size: 0.85rem;
+  color: var(--gray-500);
+  margin-bottom: 0.8rem;
+}
+
+.clean-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clean-list li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--gray-700);
+}
+
+.clean-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  border-radius: 50%;
+}
+
+/* ============================================================
+   TYPE COMPARISON
+   ============================================================ */
+.type-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.type-col {
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.type-col h3 {
+  font-size: 1.05rem !important;
+  margin: 0 0 0.15rem 0 !important;
+}
+
+.type-desc {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-bottom: 0.6rem;
+}
+
+.type-good {
+  border: 2px solid var(--green);
+  border-top: 4px solid var(--green);
+}
+
+.type-caution {
+  border: 2px solid var(--amber);
+  border-top: 4px solid var(--amber);
+}
+
+.type-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.type-item {
+  padding: 0.35rem 0.6rem;
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
+}
+
+.type-item strong {
+  font-size: 0.85rem;
+  color: var(--navy);
+  display: block;
+  margin-bottom: 0;
+}
+
+.type-item span {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+}
+
+/* ============================================================
+   STATION DETAIL SLIDES
+   ============================================================ */
+.station-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.station-header.best {
+  border-bottom-color: var(--green);
+}
+
+.station-code {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.station-name {
+  font-size: 1.7rem !important;
+  margin: 0 !important;
+  line-height: 1.2;
+}
+
+.station-area {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+.station-rent {
+  margin-left: auto;
+  font-size: 1rem;
+  color: var(--gray-600);
+  flex-shrink: 0;
+}
+
+.station-rent strong {
+  font-size: 1.6rem;
+  color: var(--navy);
+}
+
+.best-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--green), #10b981);
+  color: #fff !important;
+  font-size: 0.7rem !important;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  letter-spacing: 0.04em;
+}
+
+/* Station eval grid */
+.station-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.eval-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.eval-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.eval-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--gray-200);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+}
+
+.eval-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--blue-light));
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.eval-fill.danger {
+  background: linear-gradient(90deg, var(--red), #f87171);
+}
+
+.eval-fill.good {
+  background: linear-gradient(90deg, var(--green), #34d399);
+}
+
+.eval-card p {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================================
+   RECOMMEND CARDS
+   ============================================================ */
+.recommend-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.recommend-cards.compact-cards {
+  gap: 0.8rem;
+}
+
+.recommend-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+}
+
+.recommend-rank {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.recommend-card.gold .recommend-rank {
+  background: var(--gold-light);
+  color: var(--gold);
+}
+
+.recommend-card.gold {
+  border-color: var(--gold);
+  border-width: 2px;
+}
+
+.recommend-card.silver .recommend-rank {
+  background: var(--gray-100);
+  color: var(--silver);
+}
+
+.recommend-card.silver {
+  border-color: var(--gray-400);
+}
+
+.recommend-card.bronze .recommend-rank {
+  background: #fef3e2;
+  color: var(--bronze);
+}
+
+.recommend-body h3 {
+  font-size: 1.2rem !important;
+  margin: 0 0 0.2rem 0 !important;
+}
+
+.recommend-rent {
+  font-size: 0.85rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.recommend-body p {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.recommend-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+.r-tag {
+  display: inline-block;
+  background: var(--blue-pale);
+  color: var(--blue);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.recommend-card.neutral {
+  border-color: var(--gray-300);
+}
+
+.recommend-card.dim {
+  border-color: var(--gray-200);
+  background: var(--gray-50);
+  opacity: 0.85;
+}
+
+.inline-rent {
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: var(--gray-500) !important;
+}
+
+/* ============================================================
+   CHECKLIST
+   ============================================================ */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.3rem 1.5rem;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.check-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.check-item strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.check-item p {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+  margin: 0;
+}
+
+/* ============================================================
+   CLOSING SLIDE
+   ============================================================ */
+.closing-slide {
+  text-align: center;
+  color: #fff;
+}
+
+.closing-slide h2 {
+  font-size: 2.8rem !important;
+  color: #fff !important;
+  margin-bottom: 1.2rem;
+  line-height: 1.3;
+}
+
+.closing-sub {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.closing-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.closing-tip {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius);
+  padding: 0.8rem 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.closing-tip strong {
+  color: var(--amber);
+  margin-right: 0.5rem;
+}
+
+/* ============================================================
+   DOWNLOAD FAB
+   ============================================================ */
+.download-fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  width: 52px;
+  height: 52px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.download-fab:hover {
+  background: var(--blue);
+  transform: scale(1.08);
+}
+
+.download-menu {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s;
+}
+
+.download-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.download-option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  text-decoration: none;
+  color: var(--gray-700);
+  font-size: 0.9rem;
+  transition: background 0.15s;
+  flex-wrap: wrap;
+}
+
+.download-option:hover {
+  background: var(--gray-50);
+}
+
+.download-icon {
+  font-size: 1.3rem;
+}
+
+.download-hint {
+  width: 100%;
+  font-size: 0.72rem;
+  color: var(--gray-400);
+  margin-left: 2.1rem;
+}
+
+/* ============================================================
+   PRINT / PDF EXPORT STYLES
+   ============================================================ */
+@media print {
+  .download-fab {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   REVEAL.JS OVERRIDES
+   ============================================================ */
+.reveal .slide-number {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--gray-400);
+  background: transparent;
+  right: 1.5rem;
+  bottom: 1rem;
+}
+
+.reveal .controls {
+  color: var(--blue);
+}
+
+.reveal .progress span {
+  background: var(--blue);
+}
+
+/* Fix reveal centering */
+.reveal .slides section {
+  padding: 1rem 1.5rem;
+}
+
+/* Ensure white text on dark backgrounds */
+.reveal section[data-background-gradient] h2,
+.reveal section[data-background-gradient] p,
+.reveal section[data-background-gradient] span {
+  color: #fff;
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (スマホ縦持ち)
+   Reveal.js scales internally, but when embedded or on small
+   viewports we override grids → single column, shrink text, etc.
+   ============================================================ */
+
+/* Tablet-ish */
+@media screen and (max-width: 960px) {
+  .reveal .slides section {
+    padding: 0.8rem 1rem;
+  }
+
+  .slide-content {
+    padding: 0.3rem 0.5rem;
+  }
+
+  .title-main {
+    font-size: 2.6rem !important;
+  }
+
+  .title-sub {
+    font-size: 1.1rem;
+  }
+
+  .section-divider h2 {
+    font-size: 2.2rem !important;
+  }
+
+  .section-number {
+    font-size: 3.5rem;
+  }
+
+  .card-grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .station-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .station-grid .eval-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .type-comparison {
+    gap: 1rem;
+  }
+
+  .type-item span {
+    font-size: 0.72rem;
+  }
+}
+
+/* Phone */
+@media screen and (max-width: 600px) {
+  .sp-only { display: inline; }
+
+  .reveal .slides section {
+    padding: 0.6rem 0.6rem;
+  }
+
+  .slide-content {
+    padding: 0.2rem 0.2rem;
+  }
+
+  /* Title slide */
+  .title-main {
+    font-size: 2rem !important;
+  }
+
+  .title-sub {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .title-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .title-meta {
+    font-size: 0.75rem;
+  }
+
+  .title-divider {
+    display: none;
+  }
+
+  .title-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  /* Section dividers */
+  .section-divider h2 {
+    font-size: 1.7rem !important;
+  }
+
+  .section-number {
+    font-size: 2.8rem;
+  }
+
+  .section-divider p {
+    font-size: 1rem;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .slide-lead {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Agenda */
+  .agenda-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .agenda-item {
+    padding: 0.8rem;
+    gap: 0.7rem;
+  }
+
+  .agenda-num {
+    font-size: 1.3rem;
+  }
+
+  .agenda-text strong {
+    font-size: 0.92rem;
+  }
+
+  .agenda-text span {
+    font-size: 0.75rem;
+  }
+
+  /* Axis header */
+  .axis-header {
+    margin-bottom: 1rem;
+    gap: 0.7rem;
+  }
+
+  .axis-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.6rem;
+  }
+
+  .axis-title {
+    font-size: 1.2rem !important;
+  }
+
+  .axis-subtitle {
+    font-size: 0.8rem;
+  }
+
+  /* Card grids → 1 col */
+  .card-grid-2,
+  .card-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .info-card {
+    padding: 1rem;
+  }
+
+  .info-card .card-icon {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .info-card h3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .info-card p {
+    font-size: 0.82rem;
+  }
+
+  .info-card p br {
+    display: none;
+  }
+
+  .card-tag {
+    font-size: 0.68rem;
+    margin-top: 0.4rem;
+  }
+
+  /* Callout boxes */
+  .callout-box {
+    padding: 0.9rem 1rem;
+    font-size: 0.88rem;
+    gap: 0.6rem;
+  }
+
+  .callout-box.compact {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.82rem;
+  }
+
+  .callout-icon {
+    font-size: 1.1rem;
+  }
+
+  .callout-box p {
+    font-size: 0.82rem;
+  }
+
+  /* Rent map */
+  .rent-zone {
+    padding: 0.9rem 1rem;
+  }
+
+  .zone-label {
+    font-size: 0.88rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .rent-stations {
+    gap: 0.4rem;
+  }
+
+  .rent-badge {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.8rem;
+    min-width: 80px;
+  }
+
+  .rent-badge span {
+    font-size: 0.7rem;
+  }
+
+  /* Two columns → stack */
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .col-header {
+    padding: 0.6rem 1rem;
+    font-size: 0.92rem;
+  }
+
+  .col-body {
+    padding: 0.9rem;
+  }
+
+  .stations-label {
+    font-size: 0.78rem;
+  }
+
+  .clean-list li {
+    font-size: 0.82rem;
+    padding-left: 1rem;
+  }
+
+  /* Type comparison → stack */
+  .type-comparison {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .type-col {
+    padding: 1rem;
+  }
+
+  .type-col h3 {
+    font-size: 1rem !important;
+  }
+
+  .type-desc {
+    font-size: 0.78rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .type-list {
+    gap: 0.5rem;
+  }
+
+  .type-item {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .type-item strong {
+    font-size: 0.85rem;
+  }
+
+  .type-item span {
+    font-size: 0.72rem;
+  }
+
+  /* Station header */
+  .station-header {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .station-code {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .station-name {
+    font-size: 1.3rem !important;
+  }
+
+  .station-rent {
+    width: 100%;
+    margin-left: 0;
+    font-size: 0.88rem;
+  }
+
+  .station-rent strong {
+    font-size: 1.3rem;
+  }
+
+  .best-badge {
+    font-size: 0.6rem !important;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* Station grid → stack */
+  .station-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .eval-card {
+    padding: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 0.8rem;
+  }
+
+  .eval-label {
+    font-size: 0.7rem;
+    margin-bottom: 0;
+    width: 60px;
+    flex-shrink: 0;
+  }
+
+  .eval-bar {
+    flex: 1;
+    margin-bottom: 0;
+    height: 6px;
+  }
+
+  .eval-card p {
+    width: 100%;
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+  }
+
+  .eval-card p br {
+    display: none;
+  }
+
+  /* Recommend cards → stack */
+  .recommend-cards {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .recommend-card {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .recommend-rank {
+    font-size: 1.6rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .recommend-body h3 {
+    font-size: 1.05rem !important;
+  }
+
+  .recommend-rent {
+    font-size: 0.78rem;
+  }
+
+  .recommend-body p {
+    font-size: 0.8rem;
+  }
+
+  .recommend-body p br {
+    display: none;
+  }
+
+  .r-tag {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.45rem;
+  }
+
+  /* Checklist */
+  .check-item {
+    padding: 1rem;
+    gap: 0.7rem;
+  }
+
+  .check-icon {
+    font-size: 1.4rem;
+  }
+
+  .check-item strong {
+    font-size: 0.95rem;
+  }
+
+  .check-item p {
+    font-size: 0.8rem;
+  }
+
+  /* Closing */
+  .closing-slide h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .closing-sub {
+    font-size: 0.78rem;
+  }
+
+  .closing-tip {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  /* Download FAB */
+  .download-fab {
+    bottom: 1rem;
+    right: 1rem;
+    width: 44px;
+    height: 44px;
+  }
+
+  .download-fab svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .download-menu {
+    min-width: 200px;
+  }
+}
